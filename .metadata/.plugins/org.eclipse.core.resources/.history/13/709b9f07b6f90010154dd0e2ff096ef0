@@ -1,0 +1,5 @@
+package learning.SeleniumFramework.utils;
+
+public class GenericUtils {
+
+}

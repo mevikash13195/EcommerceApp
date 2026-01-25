@@ -1,0 +1,18 @@
+package learning.SeleniumFramework.runner;
+
+
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+		features="src/test"
+		
+		
+		
+		)
+
+
+
+
+public class UITestRunner {
+
+}

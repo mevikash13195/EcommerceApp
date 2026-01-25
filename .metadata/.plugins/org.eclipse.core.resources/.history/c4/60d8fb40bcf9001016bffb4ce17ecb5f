@@ -1,0 +1,44 @@
+package learning.SeleniumFramework.stepDefinitions.ui;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.WebDriver;
+
+import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
+import learning.SeleniumFramework.utils.TestContextSetup;
+
+
+public class Hooks {
+
+	TestContextSetup testContextSetup;
+	
+	
+	public Hooks(TestContextSetup testContextSetup) {
+		this.testContextSetup =testContextSetup;
+		
+	}
+	
+	@After
+	public void AfterScenario() {
+		
+		testContextSetup.testBase.driver.quit();
+	}
+	
+	@AfterStep
+	public void AddScreenshot(Scenario scenario) throws IOException{
+		
+		WebDriver driver = testContextSetup.testBase.WebDriverManager();
+		if(scenario.isFailed())
+		{
+			File sourcePath = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			byte[] fileContent = FileUtils.readFileToByteArray(sourcePath);
+			
+			
+			
+		}
+	}
+	{
+		
+		
+	}
+}

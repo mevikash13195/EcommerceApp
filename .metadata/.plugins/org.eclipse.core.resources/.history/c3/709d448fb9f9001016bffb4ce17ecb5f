@@ -1,0 +1,40 @@
+package learning.SeleniumFramework.stepDefinitions.ui;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import learning.SeleniumFramework.pageObjects.CartPage;
+import learning.SeleniumFramework.pageObjects.CheckoutPage;
+import learning.SeleniumFramework.pageObjects.PageObjectManager;
+import learning.SeleniumFramework.utils.TestContextSetup;
+
+public class CheckoutUISteps {
+
+	public WebDriver driver;
+	public CheckoutPage checkoutPage;
+	TestContextSetup testContextSetup;
+	PageObjectManager pageObjectManager;
+	
+	
+	public CheckoutUISteps(TestContextSetup testContextSetup) {
+		this.testContextSetup = testContextSetup;
+		checkoutPage = testContextSetup.pageObjectManager.getCheckoutPage();
+	}
+
+	
+	@When("I select country {string}")
+	public void i_select_country(String cntryName){
+		checkoutPage.countrySelection(cntryName);
+		
+	}
+	
+	@Then("I opt for checkout")
+	public void i_opt_for_checkout() {
+		
+		cartPage.cartCheckout();
+	}
+
+	
+}

@@ -1,0 +1,44 @@
+package learning.SeleniumFramework.pageObjects;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
+public class CartPage {
+
+	public WebDriver driver;
+	
+	
+	By prodList = By.cssSelector(".cartSelection");
+	By checkoutBtn = By.cssSelector(".totalRow button");
+	
+	
+	public CartPage(WebDriver driver) {
+		this.driver =driver;
+		
+	}
+	
+	public boolean productValidation(String itemName){
+		
+		new WebDriverWait(driver, Duration.ofSeconds(5))
+		.until(ExpectedConditions.presenceOfAllElementsLocatedBy(prodList));
+		
+		return driver.findElements(prodList).stream()
+				.anyMatch(e->e.getText().equalsIgnoreCase(itemName));
+		
+	}
+	
+	public void cartCheckout(){
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement errorMsg = wait.until(ExpectedConditions.elementToBeClickable(checkoutBtn));
+		
+		driver.findElement(checkoutBtn).click();
+	}
+	
+	
+}

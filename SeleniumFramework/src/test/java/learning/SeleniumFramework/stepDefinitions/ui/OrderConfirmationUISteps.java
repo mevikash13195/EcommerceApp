@@ -1,0 +1,30 @@
+package learning.SeleniumFramework.stepDefinitions.ui;
+
+import org.openqa.selenium.WebDriver;
+import io.cucumber.java.en.Then;
+import learning.SeleniumFramework.pageObjects.OrderConfirmationPage;
+import learning.SeleniumFramework.pageObjects.PageObjectManager;
+import learning.SeleniumFramework.utils.TestContextSetup;
+
+public class OrderConfirmationUISteps {
+
+	public WebDriver driver;
+	public OrderConfirmationPage orderConfirmationPage;
+	TestContextSetup testContextSetup;
+	PageObjectManager pageObjectManager;
+	
+	
+	public OrderConfirmationUISteps(TestContextSetup testContextSetup) {
+		this.testContextSetup = testContextSetup;
+		orderConfirmationPage = testContextSetup.pageObjectManager.getorderConfirmationPage();
+	}
+
+	
+	@Then("I receive order placement success message")
+	public void i_receive_order_placement_success_message(){
+		orderConfirmationPage.orderConfirmationMsg();
+		
+	}
+	
+	
+}

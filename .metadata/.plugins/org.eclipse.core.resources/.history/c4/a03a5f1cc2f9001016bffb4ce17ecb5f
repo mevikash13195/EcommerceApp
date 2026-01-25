@@ -1,0 +1,7 @@
+browser=chrome
+
+#API base URI
+baseURI=http://localhost:8089
+
+#UI base URL
+ProdUrl=https://rahulshettyacademy.clm/client/#/auth/login
