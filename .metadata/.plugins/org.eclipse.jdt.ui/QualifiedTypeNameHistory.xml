@@ -7,4 +7,5 @@
     <fullyQualifiedTypeName name="org.openqa.selenium.By"/>
     <fullyQualifiedTypeName name="io.cucumber.java.Scenario"/>
     <fullyQualifiedTypeName name="org.apache.commons.io.FileUtils"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.AssertionFailureBuilder"/>
 </qualifiedTypeNameHistroy>
