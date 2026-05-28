@@ -1,5 +1,0 @@
-package learning.SeleniumFramework.stepDefinitions.ui;
-
-public class Hooks {
-
-}

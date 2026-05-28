@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class LoginPage {
 
@@ -28,7 +28,7 @@ public class LoginPage {
 	public void launchApp(){
 		driver.manage().window().maximize();
 		String pageTitle = driver.getTitle();
-		Assert.assertTrue(pageTitle.equalsIgnoreCase(webTitle));
+		assertTrue(pageTitle.equalsIgnoreCase(webTitle));
 	}
 	
 	public void userInvalidLogin(String userEmail, String userPassword){
@@ -43,7 +43,7 @@ public class LoginPage {
 		WebElement errorMsg = wait.until(ExpectedConditions.visibilityOfElementLocated(loginError));
 		String errorLoginMsg = errorMsg.getText();
 		
-		Assert.assertTrue(errorLoginMsg.equalsIgnoreCase(failedLoginMsg));
+		assertTrue(errorLoginMsg.equalsIgnoreCase(failedLoginMsg));
 		
 	}
 	

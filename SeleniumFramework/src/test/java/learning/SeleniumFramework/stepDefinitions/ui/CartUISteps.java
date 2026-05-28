@@ -1,7 +1,7 @@
 package learning.SeleniumFramework.stepDefinitions.ui;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
+import org.junit.Assert;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

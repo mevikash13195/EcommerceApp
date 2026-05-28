@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class OrderConfirmationPage {
@@ -28,7 +28,7 @@ public class OrderConfirmationPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(orderMsg));
 		
 		String orderConfirmMessage = driver.findElement(orderMsg).getText();
-		Assert.assertTrue(orderConfirmMessage.equalsIgnoreCase(msgText));
+		assertTrue(orderConfirmMessage.equalsIgnoreCase(msgText));
 	}
 	
 	
