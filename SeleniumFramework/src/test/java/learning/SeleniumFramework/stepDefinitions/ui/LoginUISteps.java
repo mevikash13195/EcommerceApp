@@ -25,6 +25,7 @@ public class LoginUISteps {
 	@Given("I launch the application in browser")
 	public void i_launch_the_application_in_browser(){
 		loginPage.launchApp();
+		//Learning PR
 		
 	}
 	
